@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1940px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 58px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46.96px;
+}
+h2.mark-yellow {
+  position: relative;
+  padding-left: 340px;
+}
+h2.mark-yellow::before {
+  content: "";
+  display: block;
+  width: 431px;
+  height: 16px;
+  background-color: #f1bb01;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+}
+
+/* HEADER AND NAVIGTION */
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.navigation__item > a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.navigation__item > a:hover {
+  text-decoration: underline;
+  color: #f1bb01;
+}
+
+/* FIRST SCREEN STYLES */
+.first-screen {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("../img/first_screen/image.png"),
+    url("../img/first_screen/img_right.png"),
+    url("../img/first_screen/img_center.png"),
+    url("../img/first_screen/img_left.png");
+  background-position: 55% 20%, 95% 45%, 70% 95%, 20px 95%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+.first-screen__header {
+  border-left: 16px solid #f1bb01;
+  padding: 0 16px;
+  margin-left: 300px;
+}
+
+.button_yellow {
+  background-color: #f1bb01;
+  color: #1e1e1e;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: none;
+}
+
+.first-screen__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  position: relative;
+  min-height: 400px;
+  width: fit-content;
+}
+.first-screen__image_container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.first-screen__image_container img {
+  animation: rotate 60s infinite linear;
+}
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+/* HOW HTIS WORK BLOCK */
+.container.how-this-work__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 190px;
+  position: relative;
+  margin: 90px 0;
+}
+.how-this-work__card {
+  display: grid;
+  gap: 10px;
+  max-width: 440px;
+}
+.card_number {
+  color: #f1bb01;
+  font-size: 72px;
+  font-weight: 800;
+}
+
+.marquee {
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  height: 210px;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+  font-size: 182px;
+  font-weight: 900;
+  line-height: 214px;
+  text-align: left;
+  color: #f1bb01;
+  opacity: 0.1;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ADVANTAGES BLOCK STYLES */
+
+.advantages__header {
+  background-color: #f1bb01;
+  color: #1e1e1e;
+  padding: 16px 0;
+}
+.advantages__header h2 {
+  color: #1e1e1e;
+  text-align: right;
+}
+.advantages__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 100px;
+}
+
+.advantages__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 80px;
+  padding: 80px;
+  list-style: url("../img/list-w.svg");
+}
+
+.advantages__block.advantages__block-sponsor {
+  background-color: #f1bb01;
+  color: #1e1e1e;
+  background-image: url("../img/line.png");
+  background-position: top left;
+  background-size: 85%;
+  background-repeat: no-repeat;
+}
+
+.advantages__block.advantages__block-sponsor .advantages__list {
+  list-style: url("../img/list.svg");
+}
+
+.advantages__block.advantages__block-sponsor .advantages__list li {
+  background-color: #f1bb01;
+}
+
+.advantages__block h2 {
+  padding: 40px 80px;
+}
+
+/* TESTIMONIALS BLOCK STYLES*/
+#testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.testimonials-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.label_yellow {
+  position: absolute;
+  display: flex;
+  background-color: #f1bb01;
+  color: #1e1e1e;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.18px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* FOOTER STYLES */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-direction: column;
+  padding: 60px 0;
+}
